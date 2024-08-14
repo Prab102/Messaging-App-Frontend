@@ -1,0 +1,34 @@
+#menucont{
+    height: 100vh;
+    width:100vw;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#menuoptions{
+    display:flex;
+}
+.menuitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-decoration:none ; */
+    border:1px solid black;
+    height:70vh;
+    width:25vw;
+}
+.menulink{
+    /* border:1px solid black;  */
+    background: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%);
+    transition: all .5s ease-out;
+    background-size: 200% 100%;
+    background-position: right bottom;
+    font-size:30px;
+    text-decoration:none;
+    color:black;
+}
+.menulink:hover{
+    background-position: left bottom ;
+    color:white;
+}
+

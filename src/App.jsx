@@ -1,0 +1,64 @@
+import { useState } from 'react'
+
+import { Route, Routes} from 'react-router-dom'
+
+import Cookies from 'universal-cookie';
+import {jwtDecode} from 'jwt-decode';
+
+import LoginPage from './Components/LoginPage';
+import SignupPage from './Components/SignupPage';
+import HomePage from './Components/HomePage';
+import TopBar from './Components/TopBar';
+import MenuPage from './Components/MenuPage';
+
+import ProfilePage from './Components/ProfilePage';
+import SearchBar from './Components/SearchBar';
+import ErrorPage from './Components/ErrorPage';
+
+import './App.css'
+
+
+function App() {
+
+  const [user, setUser] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+
+  const cookies = new Cookies();
+  // const navigate = useNavigate();
+
+
+  //have to use this to log in user if it exists
+
+  if(cookies.get("jwt-authorization") && user == null){
+    const decoded = jwtDecode(cookies.get("jwt-authorization"));
+    setUser(decoded);
+    setLoggedIn(true);
+  }
+
+  return (
+    <>
+      <div id="webcontainer">
+        {loggedIn ? <TopBar setUser={setUser} user = {user} cookies ={cookies} loggedIn = {loggedIn} setLoggedIn = {setLoggedIn}/> : <></>}
+
+        <Routes > 
+
+            <Route path ='/' element ={
+                <LoginPage setUser = {setUser} user = {user} cookies = {cookies} loggedIn = {loggedIn} setLoggedIn = {setLoggedIn}/>
+            }/>
+            <Route path ='/menu' element ={<MenuPage  user={user}/>}/>
+            <Route path ='/profile/:userid' element ={<ProfilePage user= {user} loggedIn = {loggedIn}/>}/> 
+            <Route path ='/search' element ={<SearchBar user ={user} loggedIn= {loggedIn}/>}/> 
+            {/* makes route path use id */}
+            <Route path ='/signup' element ={<SignupPage />}/>
+            <Route path ='/home' element ={<HomePage user= {user} loggedIn = {loggedIn} setLoggedIn ={setLoggedIn}/>}/>
+            <Route path='*' element = {<ErrorPage/>}></Route>
+            
+            
+          </Routes>
+      </div>
+    </>
+  )
+}
+
+export default App

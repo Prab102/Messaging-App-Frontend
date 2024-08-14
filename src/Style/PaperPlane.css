@@ -1,0 +1,33 @@
+/* html{
+    background-color: grey;
+} */
+  
+.planePath {
+    /* lighter */
+    stroke: #D9DADA;
+    stroke-width: .1%;
+    stroke-width: .5%;
+    stroke-dasharray: 1% 2%;
+    stroke-linecap: round;
+    fill: none;
+  }
+  
+.fil1 {
+    /* lighter */
+    fill: #D9DADA;
+  }
+  
+.fil2 {
+    /* light */
+    fill: #C5C6C6;
+  }
+  
+.fil4 {
+    /* darkest */
+    fill: #9D9E9E;
+  }
+  
+.fil3 {
+    /* darkest shadow */
+    fill: #AEAFB0;
+  }

@@ -1,0 +1,62 @@
+#loginpagecont{
+    width: 100vw;
+    max-height: 100vh;
+    display:flex;
+}
+#loginsection{
+    max-width: 35vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#loginformcont{
+    padding-left:5vw;
+    width:30vw;
+    display: flex;
+    flex-direction: column;
+}
+#loginForm{
+    margin-top:20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+#usernameinput{
+    width:17vw;
+    margin-bottom: 18px;
+    font-size: 20px;
+    margin-top:10px;
+
+}
+#passwordinput{
+    width:17vw;
+    margin-bottom: 18px;
+    font-size: 20px;
+    margin-top:10px;
+}
+.loginbutton{
+    width: 17.5vw;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    /* font-size: px; */
+}
+
+#homesection{
+    background-color: rgb(23, 61, 89);
+    /* border:1px solid black; */
+    width: 100%;
+    height: inherit;
+}
+#demobutton{
+    border:1px solid rgb(23, 61, 89);
+    background-color: rgb(217, 228, 255);
+}
+#demobutton:hover{
+    background-color: rgb(202, 215, 249);
+
+}
