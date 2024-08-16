@@ -5,8 +5,9 @@ import OpenChat from "./OpenChat";
 
 
 // setUser cookies, loggedIn, setLoggedIn
-const HomePage = ({user}) => {
-
+const HomePage = ({user, cookies}) => {
+  // "messaging-app-backend-production-b1f1.up.railway.app"
+  // insightful-rejoicing-production.up.railway.app
     const [chats, setChats] = useState([]);
     const [chatIndex, setChatIndex] = useState(null);
     const [selectedChat, setSelectedChat] = useState([]);
@@ -17,10 +18,11 @@ const HomePage = ({user}) => {
     const [loaded, setLoaded] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
- 
+    // console.log(cookies.get("jwt-authorization"));
     async function getMessageData(){
         if(user != null){
-          const response = await fetch(`http://localhost:3000/api/users/${user.user._id}/chats`);
+          const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${user.user._id}/chats`,{credentials:"include"});
+          // const response = await fetch(`http://localhost:3000/api/users/${user.user._id}/chats`,{credentials:"include"});
           const product = await response.json();
           setChats(product.reverse());
           setLoaded(true);
@@ -56,9 +58,11 @@ const HomePage = ({user}) => {
           setChatIndex(null);
           //userId is the other chatter
           try {
-            const response = await fetch(`http://localhost:3000/api/users/${userId}/messages`);
-            const data = await response.json();
+            const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${userId}/messages`,{credentials:"include"});
+            // console.log("fetches");
+            // const response = await fetch(`http://localhost:3000/api/users/${userId}/messages`,{credentials:"include"});
 
+            const data = await response.json();
             setSelectedChat(data.messages.reverse());
             setChatIndex(index);
             setChatUserInfo(userinfo);

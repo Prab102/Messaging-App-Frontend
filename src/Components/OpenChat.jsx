@@ -9,7 +9,9 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
     const[refresh,setRefresh] = useState(false);
     const[msg,setMsg] = useState('');
 
-    const messagestring = `http://localhost:3000/api/messages` ;
+    const messagestring = `https://insightful-rejoicing-production.up.railway.app/api/messages`;
+    // const messagestring = `http://localhost:3000/api/messages`;
+
 
 
         //function that handles message post
@@ -24,7 +26,8 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
           const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            credentials: "include",
           };
           const response = await fetch(messagestring, requestOptions);
           // navigate("/");
@@ -38,8 +41,10 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
             try {
               // console.log("this is selected user",userId);
               setRefresh(false);
+              console.log("")
+              const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${userId}/messages`,{credentials:"include"});
+              // const response = await fetch(`http://localhost:3000/api/users/${userId}/messages`,{credentials: "include",});
 
-              const response = await fetch(`http://localhost:3000/api/users/${userId}/messages`);
               const data = await response.json();
               setSelectedChat(data.messages.reverse());
               if(data.messages.length > 0 ){

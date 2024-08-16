@@ -7,7 +7,9 @@ import { useState } from 'react';
 
 const SignupPage = () => {
 
-    const signupstring = `http://localhost:3000/api/users` ;
+    const signupstring = `https://insightful-rejoicing-production.up.railway.app/api/users` ;
+    // const signupstring = `http://localhost:3000/api/users` ;
+
 
     const [displayError, setDisplayError] = useState(false);
     const [error, setError] = useState("");

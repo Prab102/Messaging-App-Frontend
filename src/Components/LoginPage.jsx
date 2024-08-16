@@ -10,7 +10,9 @@ import {jwtDecode} from 'jwt-decode'
 
 const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
 
-    const loginstring = `http://localhost:3000/login` ;
+    const loginstring = `https://insightful-rejoicing-production.up.railway.app/login` ;
+    // const loginstring = `http://localhost:3000/login` ;
+    
 
     const [foundMessage, setFoundMessage] = useState(true);
 
@@ -29,7 +31,7 @@ const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
-          // credentials: 'include'
+          credentials: 'include'
         };
         try {
           const response = await fetch(loginstring, requestOptions, );
@@ -39,10 +41,12 @@ const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
           const resdata = await response.json();
           const decoded = jwtDecode(resdata.token)
 
+          // console.log("this is data",resdata); //dont forget to change for demo too
+
             setUser(decoded);
-            cookies.set("jwt-authorization", resdata.token,{
-                expires: new Date(decoded.exp * 1000),
-            });
+            // cookies.set("jwt-authorization", resdata.token,{
+            //     expires: new Date(decoded.exp * 1000),
+            // });
             setLoggedIn(true);
 
         } 
@@ -66,6 +70,7 @@ const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          credentials: "include", //important
           body: JSON.stringify(data),
         };
           const response = await fetch(loginstring, requestOptions, );
@@ -74,11 +79,14 @@ const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
           }
           const resdata = await response.json();
           const decoded = jwtDecode(resdata.token)
+          // console.log("this is data",response); //dont forget to change for demo too
+
             setUser(decoded);
             // setLoggedIn(true);
-            cookies.set("jwt-authorization", resdata.token,{
-                expires: new Date(decoded.exp * 1000),
-            });
+
+            // cookies.set("jwt-authorization", resdata.token,{
+            //     expires: new Date(decoded.exp * 1000),
+            // });
             setLoggedIn(true);
 
       }

@@ -27,11 +27,13 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
-          // credentials: 'include'
+          credentials: 'include'
         };
-        const response = await fetch(`http://localhost:3000/logout`, requestOptions);
+        const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/logout`, requestOptions);
+        // const response = await fetch(`http://localhost:3000/logout`, requestOptions);
 
-        cookies.remove("jwt-authorization");
+
+        cookies.remove("jwt_token");
         setUser(null);
         
         setLoggedIn(false);
@@ -40,6 +42,20 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
         // cookies.remove("jwt-authorization");
         
       }
+      useEffect(()=>{
+        const controller = new AbortController();
+        // const signal = controller.signal;
+        if(user == null){
+          navigate('/');
+        }
+        
+    
+        return() =>{
+            // clearInterval(key)
+            controller.abort();
+        };
+    
+      },[user]);
       
       const toggleSelected = async (nav) => {
         setSelected(nav);

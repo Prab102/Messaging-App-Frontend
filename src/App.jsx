@@ -26,12 +26,10 @@ function App() {
 
   const cookies = new Cookies();
   // const navigate = useNavigate();
-
-
-  //have to use this to log in user if it exists
-
-  if(cookies.get("jwt-authorization") && user == null){
-    const decoded = jwtDecode(cookies.get("jwt-authorization"));
+  console.log("these are cookies",cookies);
+  if(cookies.get("jwt_token") && user == null){
+    console.log("there is a jwt token");
+    const decoded = jwtDecode(cookies.get("jwt_token"));
     setUser(decoded);
     setLoggedIn(true);
   }
@@ -51,7 +49,7 @@ function App() {
             <Route path ='/search' element ={<SearchBar user ={user} loggedIn= {loggedIn}/>}/> 
             {/* makes route path use id */}
             <Route path ='/signup' element ={<SignupPage />}/>
-            <Route path ='/home' element ={<HomePage user= {user} loggedIn = {loggedIn} setLoggedIn ={setLoggedIn}/>}/>
+            <Route path ='/home' element ={<HomePage user= {user} loggedIn = {loggedIn} setLoggedIn ={setLoggedIn} cookies= {cookies}/>}/>
             <Route path='*' element = {<ErrorPage/>}></Route>
             
             
