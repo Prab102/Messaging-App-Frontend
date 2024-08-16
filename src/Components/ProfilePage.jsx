@@ -123,7 +123,7 @@ const ProfilePage = ({user,loggedIn, profileid}) => {
                         </div>
                         <div id="editstatuscont">
                           <h4>Edit Status</h4>
-                          <textarea name="statusmessage" placeholder="status message"  defaultValue={userInfo.statusmessage} />
+                          <textarea name="statusmessage" maxLength="250"placeholder="status message"  defaultValue={userInfo.statusmessage} />
                         </div>
                         <div id="buttoncont">
                           <button id="changesubmit" type="submit"> Submit</button>

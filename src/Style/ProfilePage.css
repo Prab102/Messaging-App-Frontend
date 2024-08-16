@@ -56,7 +56,8 @@
     padding-right:30px;
     padding-top:18px;
     padding-bottom: 18px;
-    border-radius: 60px;
+    border-radius: 50%;
+    user-select: none;
 }
 #activecircle{
     border:1px solid black;
@@ -66,6 +67,8 @@
     border-radius: 40px;
     position:relative;
     top: 20px;
+    user-select: none;
+
 }
 #inactivecircle{
     border:1px solid black;
@@ -75,10 +78,13 @@
     position:relative;
     left:-3px;
     top: 25px;
+    user-select: none;
+
 }
 #profilename{
     font-size: 36px;
     margin-left:5vw;
+    user-select: none;
 }
 #editbutton{
     cursor:pointer;
