@@ -129,7 +129,8 @@
 }
 #statusnote{
     display:flex;
-    flex-wrap: wrap;
+    word-wrap: break-word;
+    /* flex-wrap: wrap; */
 }
 
 #buttoncont{
