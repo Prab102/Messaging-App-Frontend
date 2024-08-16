@@ -15,11 +15,11 @@
     width:30vw;
     max-height: 100vh;
     overflow: auto;
-    /* -ms-overflow-style: none;  IE and Edge */
-    /* scrollbar-width: none;  Firefox */
+    -ms-overflow-style: none;  
+     scrollbar-width: none;  
 }
 #chatscont::-webkit-scrollbar {
-    /* display: none; */
+    display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -84,6 +84,9 @@
     flex-direction: column-reverse;
     gap:50px;
     overflow: auto;
+}
+#allmessages::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 .message{
     padding-left:1vw;
