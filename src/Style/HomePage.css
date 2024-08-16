@@ -8,7 +8,7 @@
     border-right: 1px solid lightgrey;
     width:30vw;
     max-height: 100vh;
-    overflow: scroll;
+    overflow: auto;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
