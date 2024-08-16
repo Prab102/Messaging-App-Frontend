@@ -26,6 +26,7 @@
 }
 .menuitem:hover{
     background-position: left bottom ;
+    background-color: green;
     color:white;
 }
 .menulink{
