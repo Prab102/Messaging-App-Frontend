@@ -127,6 +127,11 @@
     flex-wrap: wrap;
     height: 10vh;
 }
+#statusnote{
+    display:flex;
+    flex-wrap: wrap;
+}
+
 #buttoncont{
     /* border:1px solid black; */
     min-width: 200px;
