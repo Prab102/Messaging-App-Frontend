@@ -129,10 +129,13 @@
 }
 #statusnote{
     display:flex;
-    word-wrap: break-word;
-    flex-wrap: wrap;
-    overflow-wrap: break-word;
+    /* word-wrap: break-word; */
+    /* flex-wrap: wrap; */
+    /* overflow-wrap: break-word; */
 }
+ #statusnote p{
+    word-wrap: break-word;
+ }
 
 #buttoncont{
     /* border:1px solid black; */
