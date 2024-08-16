@@ -132,9 +132,10 @@
     /* word-wrap: break-word; */
     /* flex-wrap: wrap; */
     max-width: 60%;
-    /* overflow-wrap: break-word; */
+    overflow-wrap: hidden;
 }
  #statusnote p{
+    overflow-wrap: break-word;
     word-wrap: break-word;
  }
 
