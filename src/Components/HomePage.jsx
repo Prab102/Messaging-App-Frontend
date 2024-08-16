@@ -21,7 +21,9 @@ const HomePage = ({user, cookies}) => {
     // console.log(cookies.get("jwt-authorization"));
     async function getMessageData(){
         if(user != null){
-          const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${user.user._id}/chats`,{credentials:"include"});
+          // const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${user.user._id}/chats`,{credentials:"include"});
+          const response = await fetch(`https://messaging-api.prabsingh.io/api/users/${user.user._id}/chats`,{credentials:"include"});
+
           // const response = await fetch(`http://localhost:3000/api/users/${user.user._id}/chats`,{credentials:"include"});
           const product = await response.json();
           setChats(product.reverse());
@@ -58,7 +60,7 @@ const HomePage = ({user, cookies}) => {
           setChatIndex(null);
           //userId is the other chatter
           try {
-            const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${userId}/messages`,{credentials:"include"});
+            const response = await fetch(`https://messaging-api.prabsingh.io/api/users/${userId}/messages`,{credentials:"include"});
             // console.log("fetches");
             // const response = await fetch(`http://localhost:3000/api/users/${userId}/messages`,{credentials:"include"});
 

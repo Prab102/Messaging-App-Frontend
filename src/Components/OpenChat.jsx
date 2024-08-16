@@ -9,7 +9,7 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
     const[refresh,setRefresh] = useState(false);
     const[msg,setMsg] = useState('');
 
-    const messagestring = `https://insightful-rejoicing-production.up.railway.app/api/messages`;
+    const messagestring = `https://messaging-api.prabsingh.io/api/messages`;
     // const messagestring = `http://localhost:3000/api/messages`;
 
 
@@ -42,7 +42,7 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
               // console.log("this is selected user",userId);
               setRefresh(false);
               console.log("")
-              const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${userId}/messages`,{credentials:"include"});
+              const response = await fetch(`https://messaging-api.prabsingh.io/api/users/${userId}/messages`,{credentials:"include"});
               // const response = await fetch(`http://localhost:3000/api/users/${userId}/messages`,{credentials: "include",});
 
               const data = await response.json();

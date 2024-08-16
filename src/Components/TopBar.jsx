@@ -29,7 +29,7 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
           body: JSON.stringify(data),
           credentials: 'include'
         };
-        const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/logout`, requestOptions);
+        const response = await fetch(`https://messaging-api.prabsingh.io/logout`, requestOptions);
         // const response = await fetch(`http://localhost:3000/logout`, requestOptions);
 
 

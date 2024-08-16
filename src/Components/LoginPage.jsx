@@ -10,7 +10,7 @@ import {jwtDecode} from 'jwt-decode'
 
 const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
 
-    const loginstring = `https://insightful-rejoicing-production.up.railway.app/login` ;
+    const loginstring = `https://messaging-api.prabsingh.io/login` ;
     // const loginstring = `http://localhost:3000/login` ;
     
 

@@ -24,7 +24,7 @@ const ProfilePage = ({user,loggedIn, profileid}) => {
         //THIS NEEDS TO CHANGE THIS ONLY GETS SIGNED IN USER DATA
         async function getProfileData(){
             if(user != null){
-              const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${id.userid}`);
+              const response = await fetch(`https://messaging-api.prabsingh.io/api/users/${id.userid}`);
               // const response = await fetch(`http://localhost:3000/api/users/${id.userid}`);
 
               const product = await response.json();
@@ -68,7 +68,7 @@ const ProfilePage = ({user,loggedIn, profileid}) => {
             body: JSON.stringify(data),
             credentials: "include",
           };
-          const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${id.userid}`, requestOptions);
+          const response = await fetch(`https://messaging-api.prabsingh.io/api/users/${id.userid}`, requestOptions);
           // const response = await fetch(`http://localhost:3000/api/users/${id.userid}`, requestOptions);
 
           setEditWindow(false);

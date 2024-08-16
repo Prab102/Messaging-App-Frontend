@@ -28,7 +28,7 @@ const SearchBar = ({user, loggedIn}) => {
 
         const data1 = new FormData(event.target);
         try {
-            const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/username/${data1.get("searchuser")}`);
+            const response = await fetch(`https://messaging-api.prabsingh.io/api/users/username/${data1.get("searchuser")}`);
             // const response = await fetch(`http://localhost:3000/api/users/username/${data1.get("searchuser")}`);
 
             const product = await response.json();

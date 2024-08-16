@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const SignupPage = () => {
 
-    const signupstring = `https://insightful-rejoicing-production.up.railway.app/api/users` ;
+    const signupstring = `https://messaging-api.prabsingh.io/api/users` ;
     // const signupstring = `http://localhost:3000/api/users` ;
 
 
