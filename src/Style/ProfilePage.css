@@ -122,6 +122,8 @@
     width:20vw;
     min-width: 150px;
     /* width:500px; */
+    display:flex;
+    flex-wrap: wrap;
     height: 10vh;
 }
 #buttoncont{
