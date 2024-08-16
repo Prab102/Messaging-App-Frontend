@@ -26,7 +26,7 @@ const MenuPage = ({user}) => {
              <h1>Welcome</h1> 
               {user ? <>
                 <div id="menuoptions">
-                  <Link id="profilemenu"className="menulink" to={`/profile/${user.user._id}`} ><div className="menuitem">Profile</div></Link> 
+                  <div className="menulink" ><Link id="profilemenu" to={`/profile/${user.user._id}`} ><div className="menuitem">Profile</div></Link> </div>
                   <Link id="chatsmenu"className="menulink" to="/home" ><div className="menuitem">Chats</div> </Link>
                   <Link id="searchmenu"className="menulink" to="/search" ><div className="menuitem">Search</div></Link>
                 </div>
