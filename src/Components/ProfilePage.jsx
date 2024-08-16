@@ -55,7 +55,7 @@ const ProfilePage = ({user,loggedIn, profileid}) => {
         async function handleProfileEdit(event){
           // console.log()
           
-          // event.preventDefault();
+          event.preventDefault();
           const data1 = new FormData(event.target);
           const data = {
           profilecolor: data1.get("color"),
