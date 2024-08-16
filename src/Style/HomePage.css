@@ -233,6 +233,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    overflow:none;
 }
 .loaderchats{
     border: 10px solid #f3f3f3; /* Light grey */
