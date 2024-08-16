@@ -13,20 +13,20 @@
     justify-content: center;
     align-items: center;
     /* text-decoration:none ; */
-    background-image: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%);
+    /* background-color: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%); */
     transition: all .5s ease-out;
     -moz-transition: all .5s ease-out; 
     -webkit-transition: all .5s ease-out; 
     -o-transition: all .5s ease-out; 
-    background-size: 200% 100%;
-    background-position: right bottom;
+    /* background-size: 200% 100%; */
+    /* background-position: right bottom; */
     border:1px solid black;
     height:70vh;
     width:25vw;
 }
 .menuitem:hover{
-    background-position: left bottom ;
-    /* background-color: green; */
+    /* background-position: left bottom ; */
+    background-color: rgb(51, 53, 60);
     color:white;
 }
 .menulink{
