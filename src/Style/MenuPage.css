@@ -13,11 +13,11 @@
     justify-content: center;
     align-items: center;
     /* text-decoration:none ; */
-    background: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%);
-    /* transition: all .5s ease-out; */
-    /* -moz-transition: all .5s ease-out; 
+    background-image: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%);
+    transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out; 
     -webkit-transition: all .5s ease-out; 
-    -o-transition: all .5s ease-out;  */
+    -o-transition: all .5s ease-out; 
     background-size: 200% 100%;
     background-position: right bottom;
     border:1px solid black;
@@ -26,12 +26,12 @@
 }
 .menuitem:hover{
     background-position: left bottom ;
-    background-color: green;
+    /* background-color: green; */
     color:white;
 }
 .menulink{
     /* border:1px solid black;  */
-    background: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%);
+    background-image: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%);
     /* transition: all .5s ease-out; */
 
     background-size: 200% 100%;
