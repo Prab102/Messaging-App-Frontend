@@ -2,8 +2,8 @@ import { useState ,useEffect} from 'react'
 
 import { Route, Routes} from 'react-router-dom'
 
-// import Cookies from 'universal-cookie';
-import cookies from 'js-cookie'
+import Cookies from 'universal-cookie';
+// import cookies from 'js-cookie'
 import {jwtDecode} from 'jwt-decode';
 
 import LoginPage from './Components/LoginPage';
@@ -25,7 +25,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
 
-  // const cookies = new Cookies();
+  const cookies = new Cookies();
   // const navigate = useNavigate();
   console.log("these are cookies outside ",cookies.get("_vercel_jwt")); //test this might work
   if(cookies.get("jwt_token") && user == null){
