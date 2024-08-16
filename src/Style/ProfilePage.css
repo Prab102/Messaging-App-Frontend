@@ -84,6 +84,7 @@
 #profilename{
     font-size: 36px;
     margin-left:5vw;
+    text-align: center;
     user-select: none;
 }
 #editbutton{
