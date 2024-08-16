@@ -21,6 +21,9 @@
     /* border:1px solid black;  */
     background: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%);
     transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out; /* Firefox 4 */
+    -webkit-transition: all .5s ease-out; /* Safari 和 Chrome */
+    -o-transition: all .5s ease-out; /* Opera */
     background-size: 200% 100%;
     background-position: right bottom;
     font-size:30px;

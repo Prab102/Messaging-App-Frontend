@@ -9,7 +9,15 @@
     width:30vw;
     max-height: 100vh;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+#chatscont::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
 #chatsheader{
     text-align: center;
 }
