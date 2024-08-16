@@ -33,8 +33,9 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
         // const response = await fetch(`http://localhost:3000/logout`, requestOptions);
 
 
-        cookies.remove("jwt_token");
-        
+        // cookies.remove("jwt_token");
+        cookies.remove("jwt_token", {path: "/", domain: ".prabsingh.io"}) 
+
         if(cookies.get("jwt_token")){
           console.log("cookie exists");
         }
