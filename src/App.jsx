@@ -27,18 +27,24 @@ function App() {
 
   const cookies = new Cookies();
   // const navigate = useNavigate();
-  console.log("these are cookies outside ",cookies.get("_vercel_jwt")); //test this might work
+  // console.log("these are cookies outside ",cookies.get("_vercel_jwt")); //test this might work
+  // if(cookies.get("jwt_token") && user == null){
+  //   console.log("there is a jwt token");
+  //   const decoded = jwtDecode(cookies.get("jwt_token"));
+  //   setUser(decoded);
+  //   setLoggedIn(true);
+  // }
+  useEffect(()=>{
+    const controller = new AbortController();
+    // const signal = controller.signal;
+    
+  console.log("these are cookies inside use effect",cookies.get("jwt_token"));
   if(cookies.get("jwt_token") && user == null){
     console.log("there is a jwt token");
     const decoded = jwtDecode(cookies.get("jwt_token"));
     setUser(decoded);
     setLoggedIn(true);
   }
-  useEffect(()=>{
-    const controller = new AbortController();
-    // const signal = controller.signal;
-    
-  console.log("these are cookies",cookies.get("jwt_token"));
     
 
     return() =>{
