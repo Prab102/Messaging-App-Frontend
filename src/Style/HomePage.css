@@ -7,6 +7,9 @@
     -ms-overflow-style: none;  
     scrollbar-width: none;  
 }
+#homepagecont::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
 #chatscont{
     border-right: 1px solid lightgrey;
     width:30vw;
