@@ -157,7 +157,7 @@ const ProfilePage = ({user,loggedIn, profileid}) => {
 
                         <h4>Note</h4>
                         <div id="statusnote">
-                          <p>{userInfo.statusmessage}</p>
+                          <p>{userInfo.statusmessage} <br/> </p>
                         </div>
                         
                         {/* <input type="text" /> */}
