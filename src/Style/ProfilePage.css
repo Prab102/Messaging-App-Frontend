@@ -136,6 +136,7 @@
 }
  #statusnote p{
     overflow-wrap: break-word;
+    max-width: 60vw;
     /* word-wrap: break-word; */
  }
 
