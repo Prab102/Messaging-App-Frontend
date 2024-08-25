@@ -35,7 +35,7 @@ const SignupPage = () => {
         try{
           const response = await fetch(signupstring, requestOptions);
           console.log(response);
-          if(response.statusText != 'OK'){
+          if(response.status != 200){
               setDisplayError(true);
               setError(response.statusText);
               console.log("this is bad response");
