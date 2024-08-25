@@ -62,7 +62,6 @@
 #viewprofile{
     margin-left:auto;
     /* border:1px solid black; */
-
 }
 #viewprofile:hover{
     border-bottom:2px solid black;
@@ -81,8 +80,10 @@
     width:100%;
 }
 #openchat{
-
     width:100%;
+}
+#openprofile{
+
 }
 
 #closedchat{
@@ -92,4 +93,82 @@
     display:flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width:750px){
+    #searchbar{
+        /* border: 1px solid lightgreen; */
+        height: 100vh;
+        width:100%;
+        display:flex;
+        flex-direction: column;
+    }
+    #userinputbar{
+        border:none;
+        font-size: 20px;
+        width:200px;
+        border-radius:20px;
+    }
+    #searchcont{
+        border-right:1px solid lightgrey;
+        width:100vw;
+        height: auto;
+        /* max-height: 40vh; */
+    }
+    #searchheader{
+        /* border:1px solid black; */
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #searchinputs{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border:1px solid black;
+        border-radius: 20px;
+        padding-left: 15px;
+        padding-right:15px;
+        margin-left:10px;
+        margin-right:10px;
+        background-color: white;
+        min-width:14vw;
+    }
+    #openwindow{
+        /* border:1px solid cyan; */
+        background-color: rgb(117, 152, 241);
+        width:100%;
+        max-height: 100%;
+        height: 100%;
+        /* height:600px; */
+    }
+    
+    #closedchat{
+        font-size: 36px;
+        color:white;
+        /* height:20vh; */
+        /* max-height: 600px; */
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #openchat{
+        /* border:1px solid red; */
+        /* height:100%; */
+        width:100vw;
+        /* max-height: 600px; */
+    }
+    #openprofile{
+        /* border:1px solid red; */
+        /* max-height: 600px; */
+        /* height: 100%; */
+        /* max-height: 700px; */
+        height:65.5vh;
+        /* height: 600px; */
+        width:100vw;
+        /* height: 100%; */
+        /* max-height: 100%; */
+        /* overflow: scroll; */
+    }
 }

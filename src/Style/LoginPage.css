@@ -60,3 +60,62 @@
     background-color: rgb(202, 215, 249);
 
 }
+#errorlogin{
+    color:red;
+}
+
+@media screen and (max-width:750px){
+
+    #loginpagecont{
+        width: 100vw;
+        max-height: 100vh;
+        display:flex;
+        flex-direction: column;
+    }
+    #loginsection{
+        /* border: 1px solid black; */
+        max-width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #loginformcont{
+        padding-left:1vw;
+        width:80vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #usernameinput{
+        width:80vw;
+        margin-bottom: 18px;
+        font-size: 20px;
+        margin-top:10px;
+    
+    }
+    #passwordinput{
+        width:80vw;
+        margin-bottom: 18px;
+        font-size: 20px;
+        margin-top:10px;
+    }
+    .loginbutton{
+        width: 82vw;
+        margin-bottom: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 16px;
+        border-radius: 10px;
+        border:1px solid black;
+        /* font-size: px; */
+    }
+    #homesection{
+        background-color: rgb(23, 61, 89);
+        /* border:1px solid black; */
+        width: 100%;
+        height: 200px;
+    }
+
+}

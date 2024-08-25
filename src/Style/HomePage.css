@@ -18,6 +18,15 @@
     -ms-overflow-style: none;  
      scrollbar-width: none;  
 }
+#chatscontoff{
+    border-right: 1px solid lightgrey;
+    width:30vw;
+    max-height: 100vh;
+    overflow: auto;
+    -ms-overflow-style: none;  
+     scrollbar-width: none;  
+}
+
 #chatscont::-webkit-scrollbar {
     display: none;
 }
@@ -28,11 +37,14 @@
     text-align: center;
 }
 #linkcont{
+    /* border:1px solid yellow; */
     background-color: white;
     display:flex;
     justify-content: center;
 }
 #profilelink{
+    /* border:1px solid green; */
+
     text-decoration: none;
     color:black;
     font-size: 16px;
@@ -40,6 +52,13 @@
     align-items: center;
     margin-right:100px;
     
+}
+#backbutton{
+    /* border:1px solid blue; */
+    /* text-align: center; */
+    display: none;
+    align-items: center;
+    color:black;
 }
 #linkname{
     display:flex;
@@ -61,6 +80,15 @@
     font-size: 36px;
 }
 .messagescont{
+    /* border:1px solid black; */
+    display:flex;
+    flex-direction: column-reverse;
+    background-color: rgb(117, 152, 241);
+    height:91.3vh;
+    width: 100%;
+}
+.messagescontprofile{
+    /* border:1px solid black; */
     display:flex;
     flex-direction: column-reverse;
     background-color: rgb(117, 152, 241);
@@ -73,10 +101,15 @@
     color:white;
     width:100%;
 }
+#messagesectionoff{
+    /* display:none; */
+    background-color: rgb(117, 152, 241);
+    color:white;
+    width:100%;
+}
 
 /* OpenChat */
 #allmessages{
-
     padding-bottom:10px;
     padding-right:20px;
     padding-left:20px;
@@ -142,11 +175,13 @@
 }
 #lettercircle{
     font-size: 20px;
-    padding:10px;
+    padding-top:15px;
+    padding-bottom:15px;
+    width: 15px;
     margin-right:30px;
-    padding-left:16px;
-    padding-right:16px;
-    border-radius: 30px;
+    padding-left:20px;
+    padding-right:20px;
+    border-radius: 50%;
     background-color: lightgrey;
 }
 #messageinfo{
@@ -256,3 +291,162 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  @media screen and (max-width:750px){
+
+    #homepagecont{
+        /* border-top: 1px solid black; */
+        display:flex;
+        flex-direction: column;
+        /* width: 100vw; */
+        max-height: 100%;
+        overflow: auto;
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
+    }
+    /* make this display toggleable */
+    #chatscont{
+        /* border-right: 1px solid lightgrey; */
+        /* background-color: green; */
+        /* width:30vw; */
+        width: 100vw;
+        height: 100%;
+        /* max-height: 100vh; */
+        overflow: auto;
+        -ms-overflow-style: none;  
+         scrollbar-width: none;  
+    }
+    #chatscontoff{
+        display:none;
+        width: 100vw;
+        height: 100%;
+        /* max-height: 100vh; */
+        overflow: auto;
+        -ms-overflow-style: none;  
+         scrollbar-width: none;  
+    }
+    /* #nochatopen{
+        display:none;
+
+        height:500px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+    } */
+    /* make this display toggleable */
+    #messagesection{
+        /* display:none; */
+        height: 100%;
+        /* border:1px solid green; */
+        background-color: rgb(117, 152, 241);
+        color:white;
+        width:100%;
+    }
+    #messagesectionoff{
+        display:none;
+        background-color: rgb(117, 152, 241);
+        color:white;
+        width:100%;
+    }
+
+
+    /* openchat */
+    #backbutton{
+        /* border:1px solid blue; */
+        /* text-align: center; */
+        display: flex;
+        align-items: center;
+        /* font-size: 32px; */
+        padding-right:40px;
+        color:black;
+    }
+    #openchatcont{
+        /* border:5px solid green; */
+        max-height: 100%;
+        /* overflow: hidden; */
+        /* height: 100%; */
+    }
+    #allmessages{
+        /* max-height: 70%; */
+        max-height: 620px;
+        /* max-height: 1200px; */
+
+        /* border:1px solid blue; */
+        padding-bottom:5px;
+        padding-right:10px;
+        padding-left:10px;
+        display:flex;
+        flex-direction: column-reverse;
+        gap:20px;
+        overflow: auto;
+    }
+    .message{
+        padding-left:1vw;
+        padding-right:1vw;
+        font-size: 12px;
+        max-width:150px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-radius: 5px;
+    }
+    .receivedmessage .message{
+        background-color: rgb(216, 216, 216);
+        color:black;
+    
+    }
+    .sentmessage .message{
+        background-color: rgb(139, 255, 123);
+        color:black;
+    
+    }
+    #entermessage{
+        border-radius: 10px;
+        padding-left:10px;
+        padding-right:10px;
+        padding-top:5px;
+        padding-bottom:5px;
+    
+        border:none;
+        box-shadow: .5px 5px 10px .05px grey;
+        
+        font-size: 16px;
+        width:200px;
+        align-items: center;
+    }
+    .messagescont{
+        /* border:1px solid cyan; */
+        display:flex;
+        flex-direction: column-reverse;
+        background-color: rgb(117, 152, 241);
+        /* height:91.3%; */
+        padding-top:-10px;
+
+        /* max-height: 520px; */
+        /* height: 520px; */
+        max-height: 80vh;
+        max-width: 100%;
+    }
+    .messagescontprofile{
+        /* border:1px solid cyan; */
+        display:flex;
+        flex-direction: column-reverse;
+        background-color: rgb(117, 152, 241);
+        /* height:91.3%; */
+        padding-top:-10px;
+        max-height: 520px;
+        /* height: 520px; */
+        /* max-height: 80vh; */
+        max-width: 100%;
+    }
+    #linkcont{
+        /* border:1px solid yellow; */
+        background-color: white;
+        display:flex;
+        justify-content: center;
+        /* margin-bottom:-50px; */
+    }
+    
+
+
+}

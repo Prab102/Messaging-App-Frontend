@@ -10,11 +10,13 @@ import {jwtDecode} from 'jwt-decode'
 
 const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
 
-    const loginstring = `https://messaging-api.prabsingh.io/login` ;
+    const loginstring = `https://messaging-api.prabsingh.io/login` ; //change when testing
     // const loginstring = `http://localhost:3000/login` ;
     
 
     const [foundMessage, setFoundMessage] = useState(true);
+
+    const [badLogin, setBadLogin] = useState(false);
 
     const navigate = useNavigate();
 
@@ -36,7 +38,9 @@ const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
         try {
           const response = await fetch(loginstring, requestOptions, );
           if (!response.ok) {
+            setBadLogin(true);
             throw new Error('Network response was not ok');
+        
           }
           const resdata = await response.json();
           const decoded = jwtDecode(resdata.token)
@@ -128,6 +132,8 @@ const LoginPage = ({setUser, cookies, loggedIn, setLoggedIn}) => {
 
                       </form>
                       <button id="demobutton"onClick={(event)=>loginDemo(event)} className="loginbutton"> Try Application Demo</button>
+
+                      {badLogin?<div id="errorlogin">Incorrect Username or Password</div>:<></>}
 
                   </div>
 

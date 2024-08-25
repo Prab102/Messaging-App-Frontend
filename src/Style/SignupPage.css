@@ -50,3 +50,59 @@
     padding-bottom: 5px;
     font-size:16px;
 }
+
+@media screen and (max-width:750px){
+
+    #signuppagecont{
+        /* border:1px solid black; */
+        /* height: 100vh; */
+        max-height: 100vh;
+        width: 100vw;
+        display:flex;
+        flex-direction: column;
+        
+    }
+    #signupsection{
+        border:1px solid green;
+        max-width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #signupformcont{
+        /* border:1px solid green; */
+        /* max-width: 30vw; */
+        padding-left:1vw;
+        width:80vw;
+        display: flex;
+        flex-direction: column;
+    }
+    #firstname{
+        width:80vw;
+        /* opacity:70%; */
+        margin-bottom: 18px;
+        font-size: 20px;
+        margin-top:10px;
+    }
+    #lastname{
+        width:80vw;
+        margin-bottom: 18px;
+        font-size: 20px;
+        margin-top:10px;
+    
+    }
+    #signupSubmit{
+        width:82vw;
+        margin-bottom: 20px;
+
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size:16px;
+        border-radius: 10px;
+        border:1px solid black;
+    }
+
+}

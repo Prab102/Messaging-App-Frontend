@@ -21,6 +21,8 @@ const SearchBar = ({user, loggedIn}) => {
     const [selectedChat, setSelectedChat] = useState([]); // not used properly
     const [chatUser, setChatUser] = useState(null); //used to store userid
 
+    const[showBack, setShowBack] = useState(false);
+
     async function  handleSearch(event){
         event.preventDefault();
         setLoading(true);
@@ -142,11 +144,9 @@ const SearchBar = ({user, loggedIn}) => {
                 {openChat? <> 
                     <div id="openchat">
                         {openChat == true && openProfile ==false? <> 
-                                
-                                <div>
-                                    <OpenChat user = {user} setSelectedChat = {setSelectedChat} selectedChat={selectedChat} setChatUser={setChatUser} chatUser={chatUser} chatUserInfo = {searchedUser}/>
-                                </div>
-
+                            
+                                    <OpenChat showBack ={showBack} user = {user} setSelectedChat = {setSelectedChat} selectedChat={selectedChat} setChatUser={setChatUser} chatUser={chatUser} chatUserInfo = {searchedUser}/>
+                            
                                 </> :  
                                 <> 
 

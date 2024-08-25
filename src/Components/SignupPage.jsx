@@ -1,7 +1,7 @@
 import { useNavigate, Link} from "react-router-dom";
 import "../Style/SignupPage.css" ;
 import PaperPlane from "./PaperPlane";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 
@@ -13,7 +13,7 @@ const SignupPage = () => {
 
     const [displayError, setDisplayError] = useState(false);
     const [error, setError] = useState("");
-
+    const [noErrors, setNoErrors] = useState(true);
     const navigate = useNavigate();
 
     async function  signupFunction  (event) {
@@ -44,10 +44,23 @@ const SignupPage = () => {
         else{
             setDisplayError(false);
             setError("");
-            navigate("/");
+            setNoErrors(false);
+            // navigate("/");
         }
 
       }
+      useEffect(()=>{
+        const controller = new AbortController();
+        // const key = handleLoggedIn();
+        if(!noErrors){
+          navigate("/");
+        } 
+        return() =>{
+            // clearInterval(key)
+            controller.abort();
+        };
+    
+      },[noErrors,navigate]);
       
         return (
             <div id="signuppagecont">
@@ -73,7 +86,7 @@ const SignupPage = () => {
                     </form>
                     {displayError ? <>
 
-                        <div>{error}</div>
+                        <div id="errorlogin">{error}</div>
                         
                     </>:<>
                     

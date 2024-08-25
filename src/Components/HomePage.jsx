@@ -10,19 +10,27 @@ const HomePage = ({user, cookies}) => {
   // insightful-rejoicing-production.up.railway.app
     const [chats, setChats] = useState([]);
     const [chatIndex, setChatIndex] = useState(null);
-    const [selectedChat, setSelectedChat] = useState([]);
+
+    const [selectedChat, setSelectedChat] = useState(null);
     
     const [chatUserInfo,setChatUserInfo] = useState(null);
     //this is chat user id
     const [chatUser, setChatUser] = useState(null);
     const [loaded, setLoaded] = useState(false);
     const [loading, setLoading] = useState(false);
+
+    const[showBack, setShowBack] = useState(true);
+  
+
+
     const navigate = useNavigate();
     // console.log(cookies.get("jwt-authorization"));
+
+    //gets chats user is in 
     async function getMessageData(){
         if(user != null){
           // const response = await fetch(`https://insightful-rejoicing-production.up.railway.app/api/users/${user.user._id}/chats`,{credentials:"include"});
-          const response = await fetch(`https://messaging-api.prabsingh.io/api/users/${user.user._id}/chats`,{credentials:"include"});
+          const response = await fetch(`https://messaging-api.prabsingh.io/api/users/${user.user._id}/chats`,{credentials:"include"}); //change when live or testing
 
           // const response = await fetch(`http://localhost:3000/api/users/${user.user._id}/chats`,{credentials:"include"});
           const product = await response.json();
@@ -84,7 +92,7 @@ const HomePage = ({user, cookies}) => {
 
         return (
             <div id="homepagecont">
-                <div id="chatscont">
+                <div id={selectedChat == null ? "chatscont" : "chatscontoff"}>
                     <h1 id="chatsheader">Chats</h1>
                     {loaded ? 
                           <div id="chatlist">
@@ -107,12 +115,12 @@ const HomePage = ({user, cookies}) => {
                     }               
                 </div>
 
-                <div id="messagesection">
+                <div  id= {selectedChat != null ? "messagesection" :"messagesectionoff"} >
                  {loading && <div id="loadcont"><p className="loadermessages"></p></div>} 
                  
                   {selectedChat && chatUser ?
                     <>
-                      <OpenChat user = {user} setSelectedChat = {setSelectedChat} selectedChat={selectedChat} setChatUser={setChatUser} chatUser={chatUser} chatUserInfo={chatUserInfo}/>
+                      <OpenChat showBack={showBack} user = {user} setSelectedChat = {setSelectedChat} selectedChat={selectedChat} setChatUser={setChatUser} chatUser={chatUser} chatUserInfo={chatUserInfo}/>
                     </> :
                     <> <div id="nochatopen">Open a Chat</div></>
                   } 

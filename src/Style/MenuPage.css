@@ -49,3 +49,23 @@
     color:black;
 }
 
+@media screen and (max-width:750px){
+
+    .menuitem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* text-decoration:none ; */
+        /* background-color: linear-gradient(to right, rgb(51, 53, 60)50%, white 50%); */
+        transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out; 
+        -webkit-transition: all .3s ease-out; 
+        -o-transition: all .3s ease-out; 
+        /* background-size: 200% 100%;
+        background-position: right bottom; */
+        border:1px solid black;
+        height:50vh;
+        width:25vw;
+    }
+    
+}

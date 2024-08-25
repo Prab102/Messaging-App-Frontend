@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import TimeFormat from "./TimeFormat";
 import sendicon from "../assets/send.svg";
 
-const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chatUserInfo}) => {
+const OpenChat = ({showBack, user, setSelectedChat, selectedChat,setChatUser,chatUser,chatUserInfo}) => {
 
     const[refresh,setRefresh] = useState(false);
     const[msg,setMsg] = useState('');
@@ -84,10 +84,15 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
             setMsg(event.target.value);                
           } 
 
+          const handleBackClick = async () => {
+              setSelectedChat(null); //change to use a seperate state variable to handle this 
+          }
+
 
     return (
-      <>
+      <div id="openchatcont">
         <div id="linkcont">
+          {showBack ? <div id="backbutton" onClick = {() => handleBackClick()}> &lt;</div> : <></>}
           <Link id="profilelink"to={`/profile/${chatUser}`}> 
             <div id="lettercircle">{chatUserInfo.first_name.charAt(0).toUpperCase()}</div>
             <div id="linkname">
@@ -97,7 +102,7 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
           </Link> 
         </div>
 
-        <div className="messagescont">
+        <div className={showBack ? "messagescont" :"messagescontprofile"}>
             {/* <div>{selectedChat.}</div> */}
             <div id="formcont">
                         <form id="messageform" onSubmit = {event => sendMessage(event)}>
@@ -147,7 +152,7 @@ const OpenChat = ({user, setSelectedChat, selectedChat,setChatUser,chatUser,chat
 
            
         </div>
-      </>
+      </div>
 
     );
 };
