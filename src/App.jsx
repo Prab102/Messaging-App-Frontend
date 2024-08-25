@@ -38,9 +38,9 @@ function App() {
     const controller = new AbortController();
     // const signal = controller.signal;
     
-  console.log("these are cookies inside use effect",cookies.get("jwt_token"));
+  // console.log("these are cookies inside use effect",cookies.get("jwt_token"));
   if(cookies.get("jwt_token") && user == null){
-    console.log("there is a jwt token");
+    // console.log("there is a jwt token");
     const decoded = jwtDecode(cookies.get("jwt_token"));
     setUser(decoded);
     setLoggedIn(true);
