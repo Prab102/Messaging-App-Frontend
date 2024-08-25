@@ -14,6 +14,9 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
     const navigate = useNavigate();
     const params = useLocation(); 
     const [selected, setSelected] = useState(null);
+    const [logoutbool, setLogoutBool] = useState(false);
+
+    
 
 
     async function  logoutFunction (event) {
@@ -21,7 +24,6 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
         event.preventDefault();
         const data = {
           userid: user.user._id,
-
         }
         const requestOptions = {
           method: 'POST',
@@ -42,9 +44,9 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
           console.log("cookie exists");
         }
         setUser(null);
-        
+        logoutbool(true);
         setLoggedIn(false);
-        navigate("/");
+        // navigate("/");
         // setSelected(null);
         // cookies.remove("jwt-authorization");
         
@@ -55,14 +57,16 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
         if(user == null){
           navigate('/');
         }
-        
+        if(logoutbool){
+          navigate("/");
+        }
     
         return() =>{
             // clearInterval(key)
             controller.abort();
         };
     
-      },[user]);
+      },[navigate, user,logoutbool]);
       
       const toggleSelected = async (nav) => {
         setSelected(nav);
