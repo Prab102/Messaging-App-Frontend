@@ -97,7 +97,7 @@ const SignupPage = () => {
                     </form>
                     {displayError ? <>
 
-                        <div id="errorlogin">{error}</div>
+                        <div id="errorlogin">Username taken</div>
                         
                     </>:<>
                     
