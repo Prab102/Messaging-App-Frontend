@@ -27,29 +27,39 @@ const SignupPage = () => {
           password: data1.get("password"),
         //   postid: id.postid
         }
-      
-        
         const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         };
-        const response = await fetch(signupstring, requestOptions);
+        try{
+          const response = await fetch(signupstring, requestOptions);
+          console.log(response);
+          if(response.statusText != 'OK'){
+              setDisplayError(true);
+              setError(response.statusText);
+              console.log("this is bad response");
 
-        if(response.statusText != 'OK'){
-            setDisplayError(true);
-            setError(response.statusText);
-
+          }
+          else{
+              console.log("this is OK response")
+              setDisplayError(false);
+              setError("");
+              setNoErrors(false);
+              // navigate("/");
+          }
         }
-        else{
-            setDisplayError(false);
-            setError("");
-            setNoErrors(false);
-            // navigate("/");
+        catch (error){
+          if (error.name === 'AbortError') {
+            console.log('Fetch aborted');
+          } else {
+            // setError(error);
+            console.log(error)
+          }
         }
 
       }
-      
+
       useEffect(()=>{
         const controller = new AbortController();
         // const key = handleLoggedIn();
