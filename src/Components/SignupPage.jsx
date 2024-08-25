@@ -34,7 +34,7 @@ const SignupPage = () => {
         };
         try{
           const response = await fetch(signupstring, requestOptions);
-          console.log(response);
+          // console.log(response);
           if(response.status != 200){
               setDisplayError(true);
               setError(response.statusText);
