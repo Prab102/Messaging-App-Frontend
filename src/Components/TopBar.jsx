@@ -36,11 +36,12 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
 
 
         // cookies.remove("jwt_token");
-        // cookies.remove("jwt_token", {path: "/", domain: ".prabsingh.io"}) 
-        cookies.remove("jwt_token") 
+        cookies.remove("jwt_token", {path: "/", domain: ".prabsingh.io"}) 
+        // cookies.remove("jwt_token") 
 
 
         if(cookies.get("jwt_token")){
+        //  cookies.remove("jwt_token") 
           console.log("cookie exists");
         }
         setUser(null);
