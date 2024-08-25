@@ -45,9 +45,9 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
           console.log("cookie exists");
         }
         setUser(null);
-        logoutbool(true);
+        // logoutbool(true);
         setLoggedIn(false);
-        // navigate("/");
+        navigate("/");
         // setSelected(null);
         // cookies.remove("jwt-authorization");
         
@@ -58,16 +58,16 @@ const TopBar = ({user,setUser,cookies,setLoggedIn}) => {
         if(user == null){
           navigate('/');
         }
-        if(logoutbool){
-          navigate("/");
-        }
+        // if(logoutbool){
+        //   navigate("/");
+        // }
     
         return() =>{
             // clearInterval(key)
             controller.abort();
         };
     
-      },[navigate, user,logoutbool]);
+      },[navigate, user]);
       
       const toggleSelected = async (nav) => {
         setSelected(nav);

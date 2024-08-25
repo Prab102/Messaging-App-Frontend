@@ -10,7 +10,7 @@ const MenuPage = ({user}) => {
       const controller = new AbortController();
       // const signal = controller.signal;
       if(user == null){
-        console.log("makes it into not logged in")
+        // console.log("makes it into not logged in")
         navigate('/');
       }
       return() =>{
@@ -18,7 +18,7 @@ const MenuPage = ({user}) => {
           controller.abort();
       };
   
-    },[]);
+    },[user,navigate]);
     
         return (
           <div id="menucont">

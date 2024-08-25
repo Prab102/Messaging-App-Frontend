@@ -49,6 +49,7 @@ const SignupPage = () => {
         }
 
       }
+      
       useEffect(()=>{
         const controller = new AbortController();
         // const key = handleLoggedIn();
